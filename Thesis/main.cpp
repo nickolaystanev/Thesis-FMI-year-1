@@ -5,6 +5,7 @@ char** ExtractCommands(char **allStrings, unsigned int &count, int allStringsCou
 char** ExtractPaths(char **allStrings, unsigned int &count, int allStringsCount);
 void FreeMemory(char** arr1, char** arr2, unsigned int size1, unsigned int size2);
 void DoTransform(char* file, char* command);
+char* ExtractCommandLineArguments(char* argument);
 
 int main(int argc, char *argv[])
 {
@@ -14,48 +15,77 @@ int main(int argc, char *argv[])
 	char** commands;
 	char** files;
 
+	commands = ExtractCommands(argv , commandsCount , argc , html);
+	files = ExtractPaths(argv, filesCount, argc);
+
 	for (int filesToTransform = 0; filesToTransform < filesCount; filesToTransform++)
 	{
 		for (int commandsToDo = 0; commandsToDo < commandsCount; commandsToDo++)
 		{
-			DoTransform(files[filesToTransform] , commands[commandsToDo]);
+			DoTransform(files[filesToTransform], commands[commandsToDo]);
 		}
 	}
 
-	commands = ExtractCommands(argv , commandsCount , argc , html);
-	files = ExtractPaths(argv, filesCount, argc);
-
-
-
-	//FreeMemory(commands, files, commandsCount, filesCount);
+	FreeMemory(commands, files, commandsCount, filesCount);
 	return 0;
 }
 
 void DoTransform(char* file, char* command)
 {
+	char* cmdArgument = ExtractCommandLineArguments(command);
 	if (strstr(command, "--comments") != NULL)
 	{
-
+		//TODO
+		std::cout << "1";
 	}
 	if (strstr(command, "--newlines") != NULL)
 	{
-
+		//TODO
+		std::cout << "2";
 	}
 	if (strstr(command, "--indentation") != NULL)
 	{
-
+		//TODO
+		std::cout << "3";
 	}
 	if (strstr(command, "--format") != NULL)
 	{
-
+		//TODO
+		std::cout << "4";
 	}
+	delete[] cmdArgument;
+}
+
+char* ExtractCommandLineArguments(char* argument)
+{
+	int pos = 0;
+	char c = argument[0];
+	char* temp;
+	while (c != '\0')
+	{
+		if (c == '=')
+		{
+			pos++;
+			temp = new char[strlen(argument) + 1 - pos];
+			memcpy(temp, argument + pos, strlen(argument) + 1 - pos);
+			return temp;
+		}
+		pos++;
+		c = argument[pos];
+	}
+	return NULL;
 }
 
 char** ExtractPaths(char **allStrings, unsigned int &count, int allStringsCount)
 {
-	for (int i = 1; i < allStringsCount; i++)
+	for (int i = 1; i < allStringsCount-1; i++)
 	{
-		if (allStrings[i][0] != '-' && allStrings[i][0] != '-')
+		allStrings[i];
+		if (allStrings[i][0] == '-' && allStrings[i][1] == '-')
+		{
+			continue;
+		}
+		else
 		{
 			count++;
 		}
@@ -103,6 +133,7 @@ char** ExtractCommands(char **allStrings, unsigned int &count, int allStringsCou
 	return temp;
 }
 
+//TODO check for excepitons
 void FreeMemory(char** arr1, char** arr2, unsigned int size1, unsigned int size2)
 {
 	for (int i = 0; i < size1; i++)
