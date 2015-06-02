@@ -1,16 +1,20 @@
-﻿Build started 1.6.2015 г. 23:29:06.
-     1>Project "D:\University\Semestur 2\Kursova Rabota\Thesis\Thesis\Thesis.vcxproj" on node 2 (Build target(s)).
+﻿Build started 2.6.2015 г. 15:02:34.
+     1>Project "D:\GitRepositories\University\Thesis-FMI-year-1\Thesis\Thesis.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt main.cpp
          main.cpp
-     1>d:\university\semestur 2\kursova rabota\thesis\thesis\main.cpp(75): warning C4018: '<' : signed/unsigned mismatch
-     1>d:\university\semestur 2\kursova rabota\thesis\thesis\main.cpp(80): warning C4018: '<' : signed/unsigned mismatch
+     1>d:\gitrepositories\university\thesis-fmi-year-1\thesis\main.cpp(17): warning C4018: '<' : signed/unsigned mismatch
+     1>d:\gitrepositories\university\thesis-fmi-year-1\thesis\main.cpp(19): warning C4018: '<' : signed/unsigned mismatch
+     1>d:\gitrepositories\university\thesis-fmi-year-1\thesis\main.cpp(108): warning C4018: '<' : signed/unsigned mismatch
+     1>d:\gitrepositories\university\thesis-fmi-year-1\thesis\main.cpp(113): warning C4018: '<' : signed/unsigned mismatch
+     1>d:\gitrepositories\university\thesis-fmi-year-1\thesis\main.cpp(21): warning C4700: uninitialized local variable 'commands' used
+     1>d:\gitrepositories\university\thesis-fmi-year-1\thesis\main.cpp(21): warning C4700: uninitialized local variable 'files' used
        Link:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\University\Semestur 2\Kursova Rabota\Thesis\Debug\Thesis.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:\University\Semestur 2\Kursova Rabota\Thesis\Debug\Thesis.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\University\Semestur 2\Kursova Rabota\Thesis\Debug\Thesis.lib" /MACHINE:X86 Debug\main.obj
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\GitRepositories\University\Thesis-FMI-year-1\Debug\Thesis.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:\GitRepositories\University\Thesis-FMI-year-1\Debug\Thesis.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\GitRepositories\University\Thesis-FMI-year-1\Debug\Thesis.lib" /MACHINE:X86 Debug\main.obj
          Debug\TextTransformer.obj
-         Thesis.vcxproj -> D:\University\Semestur 2\Kursova Rabota\Thesis\Debug\Thesis.exe
-     1>Done Building Project "D:\University\Semestur 2\Kursova Rabota\Thesis\Thesis\Thesis.vcxproj" (Build target(s)).
+         Thesis.vcxproj -> D:\GitRepositories\University\Thesis-FMI-year-1\Debug\Thesis.exe
+     1>Done Building Project "D:\GitRepositories\University\Thesis-FMI-year-1\Thesis\Thesis.vcxproj" (Build target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:00.76
+Time Elapsed 00:00:00.73

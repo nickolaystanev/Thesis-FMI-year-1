@@ -1,9 +1,10 @@
 #include<iostream>
 #include "TextTransformer.h"
 
-char** ExtractCommands(char **allStrings, unsigned int &count, int allStringsCount);
+char** ExtractCommands(char **allStrings, unsigned int &count, int allStringsCount, bool &html);
 char** ExtractPaths(char **allStrings, unsigned int &count, int allStringsCount);
 void FreeMemory(char** arr1, char** arr2, unsigned int size1, unsigned int size2);
+void DoTransform(char* file, char* command);
 
 int main(int argc, char *argv[])
 {
@@ -13,11 +14,41 @@ int main(int argc, char *argv[])
 	char** commands;
 	char** files;
 
-	commands = ExtractCommands(argv , commandsCount , argc);
+	for (int filesToTransform = 0; filesToTransform < filesCount; filesToTransform++)
+	{
+		for (int commandsToDo = 0; commandsToDo < commandsCount; commandsToDo++)
+		{
+			DoTransform(files[filesToTransform] , commands[commandsToDo]);
+		}
+	}
+
+	commands = ExtractCommands(argv , commandsCount , argc , html);
 	files = ExtractPaths(argv, filesCount, argc);
+
+
 
 	//FreeMemory(commands, files, commandsCount, filesCount);
 	return 0;
+}
+
+void DoTransform(char* file, char* command)
+{
+	if (strstr(command, "--comments") != NULL)
+	{
+
+	}
+	if (strstr(command, "--newlines") != NULL)
+	{
+
+	}
+	if (strstr(command, "--indentation") != NULL)
+	{
+
+	}
+	if (strstr(command, "--format") != NULL)
+	{
+
+	}
 }
 
 char** ExtractPaths(char **allStrings, unsigned int &count, int allStringsCount)
@@ -45,13 +76,15 @@ char** ExtractPaths(char **allStrings, unsigned int &count, int allStringsCount)
 	return temp;
 }
 
-char** ExtractCommands(char **allStrings, unsigned int &count, int allStringsCount)
+char** ExtractCommands(char **allStrings, unsigned int &count, int allStringsCount , bool &html)
 {
 	for (int i = 1; i < allStringsCount; i++)
 	{
 		if (allStrings[i][0] == '-' && allStrings[i][0] == '-')
 		{
 			count++;
+			if (strcmp(allStrings[i], "--html"))
+				html = true;
 		}
 	}
 
