@@ -26,6 +26,9 @@ int main(int argc, char *argv[])
 		}
 	}
 
+	TextTransformer text("test.cpp", NULL);
+	std::cout << text.FindString("TextTransformer");
+
 	FreeMemory(commands, files, commandsCount, filesCount);
 	return 0;
 }
